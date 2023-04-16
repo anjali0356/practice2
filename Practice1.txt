@@ -1,0 +1,509 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    int  fact=1;
+	    int  n=3;
+	    for(int i=1;i<=n;i++){
+	        fact=fact*i;
+	    }
+		        System.out.println("Factorial of a number is"+fact);
+		    }
+}
+ wap to find the value of one num raised to power of another
+class Solution {
+    int max=Integer.MIN_VALUE;
+    public int maxPathSum(TreeNode root) {
+        helper (root);
+        return max;
+    }
+    int helper(TreeNode root){
+        if(root==null)return 0;
+        int left=Math.max(helper(root.left),0);
+        int right=Math.max(helper(root.right),0);
+        max=Math.max(max,root.val + left + right);
+        return root.val + Math.max(left,right);
+    }
+} maximum path sum imp
+LCS problem
+class Solution {
+    public int longestCommonSubsequence(String text1, String text2) {
+        final int m=text1.length();
+        final int n=text2.length();
+        int[][]dp=new int[m+1][n+1];
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++)
+                dp[i+1][j+1]=text1.charAt(i)==text2.charAt(j)? 1+dp[i][j]: Math.max(dp[i][j+1],dp[i+1][j]);
+                return dp[m][n];
+            }
+        }
+class Solution {
+       public int subarraySum(int[] nums, int k) {
+    HashMap<Integer,Integer> map = new HashMap<>();
+    map.put(0,1);  // Additive identity 
+    int sum = 0 ; 
+    int n = nums.length ;
+     int count = 0 ;
+    for(int i=0;i<n ;i++){
+        sum+=nums[i];
+        int rem = sum-k;
+        if(map.containsKey(rem)){
+            count+=map.get(rem);
+        }
+        map.put(sum,map.getOrDefault(sum,0)+1);
+    }
+    return count ;
+    }
+}
+subarray sum equals to k
+armstrong number
+class HelloWorld {
+    public static void main(String[] args){
+        int number=450,originalNumber, remainder,result=0;
+        originalNumber=number;
+        while(originalNumber!=0){
+            remainder=originalNumber%10;
+            result+=Math.pow(remainder,3);
+            originalNumber/=10;
+        }
+        if(result==number)
+        System.out.println(number+ "is an armstrong number");
+        else{
+            System.out.println(number+ "is  not an armstrong number");
+        }
+    }
+}
+binary to decimal imp
+class HelloWorld {
+    public static void main(String[] args){
+        long num=111100;
+        int decimal=BinaryToDecimal(num);
+        System.out.println("Binary to decimal");
+        System.out.println(num +"=" + decimal);
+    }  
+        public static int BinaryToDecimal(long num){
+            int decimalNumber=0,i=0;
+            long remainder;
+            while(num!=0){
+                remainder=num%10;
+                num/=10;
+                decimalNumber+=remainder*Math.pow(2,i);
+                ++i;
+            }
+            return decimalNumber;
+    }
+}
+
+hcf question
+import java.util.*;
+class Solution{
+    public static void main(String[] args){
+         int a,b,i,hcf=0;
+         Scanner sc=new Scanner(System.in);
+         System.out.println("enter the 1st number");
+          a=sc.nextInt();
+          System.out.println("enter the 2nd number");
+          b=sc.nextInt();
+         for(i=1;i<=a || i<=b;i++){
+             if(a%i==0 && b%i==0){
+                 hcf=i;
+             }
+        System.out.println("HCF of given two numbers is"+hcf);
+         }   
+    }
+
+number is prime or not
+import java.util.*;
+class Solution{
+    public static void main(String[] args){
+         int num=73;
+         boolean flag=false;
+         for(int i=2;i<=num/2;++i){
+             if(num%i==0){
+                 flag=true;
+                 break;
+             }
+         }
+        if(!flag){
+        System.out.println("it is prime number");
+         }else{
+             System.out.println("it is not prime number");
+         }
+     }
+  }
+public class Main
+{
+	public static void main(String[] args) {
+	    String s="1".repeat(5);
+	    String string="string".replace('i','e');
+	    
+	   // String name="JavaConceptOfTheDay".substring(4);
+		System.out.println(string.substring(2,5));
+	}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String s="1".repeat(5);
+	    String string="string".replace('i','e');
+	    
+	   // String name="JavaConceptOfTheDay".substring(4);
+		System.out.println("java"==new String("java"));
+	}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	  //  StOf\tThering s="1".repeat(5);
+	  //  String string="string".replace('i','e');
+	    String str=" Java\tConcept\tDay  ".strip();
+	   // String name="JavaConceptOfTheDay".substring(4);
+	   System.out.println(str);
+	//	System.out.println("java"==new String("java"));
+	}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	  //  StOf\tThering s="1".repeat(5);
+	  //  String string="string".replace('i','e');
+	    String str=" Java\tConcept\tDay  ".strip();
+	    if("string".toUpperCase()=="STRING"){
+	        System.out.println(true);
+	    }
+	       System.out.println(false);
+	   // String name="JavaConceptOfTheDay".substring(4);
+	 //  System.out.println(str);
+	//	System.out.println("java"==new String("java"));
+	}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	  //  StOf\tThering s="1".repeat(5);
+	  //  String string="string".replace('i','e');
+	    String str1="java";
+	    String str2="Java";
+	    System.out.println(str1==str2);
+	    System.out.println(str1.equals(str2));
+	    System.out.println(str1.hashCode()==str2.hashCode());
+	//	System.out.println("java"==new String("java"));
+	}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	  //  StOf\tThering s="1".repeat(5);
+	  //  String string="string".replace('i','e');
+	    String str1="java";
+	    String str2="Java";
+	    System.out.println(str1==str2);
+	    System.out.println(str1.equals(str2));
+	    System.out.println(str1.hashCode()==str2.hashCode());
+	//	System.out.println("java"==new String("java"));
+	}
+}
+public class Main
+{
+	public static void main(String[] args) {
+	  //  StOf\tThering s="1".repeat(5);
+	  //  String string="string".replace('i','e');
+	    String str1="java";
+	    String str2=str1.intern();
+	    String str3=new String("Java");
+	    System.out.println(str1==str2);
+	     System.out.println(str2==str3);
+	      System.out.println(str2==str3);
+	       System.out.println(str3==str1);
+	    //System.out.println(str1.equals(str2));
+	   // System.out.println(str1.hashCode()==str2.hashCode());
+	//	System.out.println("java"==new String("java"));
+	}
+}
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println(7.7+3.3+"Java"+3.3+7.7);
+	}
+}
+public class Main
+
+{
+	public static void main(String[] args) {
+		System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		System.out.println("javaJ2EE".substring(2,5));
+	}
+}
+//234five
+	
+//	}
+//}
+public class Main
+
+{
+	public static void main(String[] args) {
+	    String s1=new String("jAVA");
+	    String s2=new String("JAVA");
+	    	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		//System.out.println("javaJ2EE".substring(2,5));
+	}
+}
+//234five
+
+public class Main
+
+{
+	public static void main(String[] args) {
+	    String s1=new String("jAVA");
+	    String s2=new String("JAVA");
+	    	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		System.out.println("java concept of the day".substring(8,4));
+	}
+}
+//234five
+	public class Main
+
+{
+	public static void main(String[] args) {
+	    String s1=new String("jAVA");
+	    String s2=new String("JAVA");
+	    	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		System.out.println("A".compareTo("B"));//-1
+		System.out.println("B".compareTo("A"));//1
+	}
+}
+//234five
+	
+//	}
+//}
+public class Main
+
+{
+	public static void main(String[] args) {
+	    String s1=new String("jAVA");
+	    String s2=new String("JAVA");
+	    	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		System.out.println("A".compareTo("B"));//-1
+		System.out.println("B".compareTo("A"));//1
+	}
+}
+//234five
+	
+//	}
+//}
+public class Main
+
+{
+	public static void main(String[] args) {
+	    String s1=new String("jAVA");
+	    String s2=new String("JAVA");
+	    	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		System.out.println("A".compareTo("B"));//-1
+		System.out.println("B".compareTo("A"));//1
+	}
+}
+//234five
+	
+//	}
+//}
+public class Main
+
+{
+	public static void main(String[] args) {
+	   // String s1=new String("jAVA");
+	   // String s2=new String("JAVA");
+	    //	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+		String s="JAVA";
+	//	StringBuffer sbuffer=new stringBuffer(string);
+	//	StringBuilder sBuilder=new StringBuilder(string);//
+		"ABC123abc".chars().forEach(System.out::println);//98 99
+
+	//	System.out.println("A".compareTo("B"));//-1
+		//System.out.println("B".compareTo("A"));//1
+	}
+}
+//234five
+	
+//	}
+//}
+public class Main
+
+{
+	public static void main(String[] args) {
+	   // String s1=new String("jAVA");
+	   // String s2=new String("JAVA");
+	    //	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+	//	String s="JAVA";
+	//	StringBuffer sbuffer=new stringBuffer(string);
+	//	StringBuilder sBuilder=new StringBuilder(string);//
+	String s=1+"null"+"null";
+		//"ABC123abc".chars().forEach(System.out::println);//98 99
+System.out.println(s);//1nullnull
+	//	System.out.println("A".compareTo("B"));//-1
+		//System.out.println("B".compareTo("A"));//1
+	}
+}
+//234five
+	public class Main
+
+{
+	public static void main(String[] args) {
+	   // String s1=new String("jAVA");
+	   // String s2=new String("JAVA");
+	    //	System.out.println(s1==s2);//false
+		//System.out.println(7.7+3.3+"Java"+3.3+7.7);
+	//	String s="JAVA";
+//	String s="JAVA concept of the day";
+       // String str=null;
+        String str1="123321123";;
+        
+       // System.out.println(str.delete(3,6()));
+        System.out.println(str1);//123321123
+       // System.out.println(str.replace(str.isEmpty()));
+//	System.out.println(str.replace("a","A").lastIndexof('0')));
+	
+	//	StringBuffer sbuffer=new stringBuffer(string);
+	//	StringBuilder sBuilder=new StringBuilder(string);//
+	//String s=1+"null"+"null";
+		//"ABC123abc".chars().forEach(System.out::println);//98 99
+//System.out.println(s);//1nullnull
+	//	System.out.println("A".compareTo("B"));//-1
+		//System.out.println("B".compareTo("A"));//1
+	}
+}
+//234five
+	
+//	}
+//}
+public class Main{
+//	System.out.println(str.replace("a","A").lastIndexof('0')));
+	 String str1 ="onr two three four";
+	String str2="Onetwothreefour";
+	System.out.println(str1.trim().equalsIgnoreCase(str2));//false
+	
+	}
+}
+//234five
+	
+//	}
+//}
+a=imread('test1'.jpg);
+p=size(a);
+w=[1,1,1;1 1 1];
+for x=2:1:p(1)-1
+    for y=2:1:p(2)-1
+        a1=[w(1)*a(x-1,y-1)w(2)*a(x-1,y)w(3)*a(x-1,y+1) w(4)*a(x,y-1) w(5)*a(x,y) w(6)*a(x,y+1) w(7)*a(x+1,y+1) w(8)*a(x+1,y) w(9)*a(x+1,y+1)];
+        A(x,y)=min(a1);%Erosion
+        A(x,y)=min(a1);%dilation
+        Sharp(x,y)=a(x,y)-A(x,y);
+    end
+end
+subplot(2,2,1),imshow(a),title('original image');
+subplot(2,2,2),imshow(A),title('erosion');
+subplot(2,2,3),imshow(B),title('dilation');
+subplot(2,2,4),imshow(a),title('boundary extracted');
+
+binary tree
+class Solution {
+    public int getDecimalValue(ListNode head) {
+      int sum=0;
+      while(head!=null){
+          sum+=1;
+          sum+=head.val;
+          head=head.next;  
+      }     
+		return sum;         
+      }
+    }
+leetcode 141
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+         ListNode f=head;
+        ListNode s=head;    
+        while(f!=null && f.next!=null){
+            s=s.next;
+            f=f.next.next;
+            if(s==f){
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+141 leetcode 
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+         if(head==null || head.next==null){
+            return false;
+         }   
+         ListNode p1=head;
+         ListNode p2=head.next;
+        while(p1!= p2){
+            if(p2==null || p2.next==null){
+                return false;
+            }
+            p1=p1.next;
+            p2=p2.next.next;
+            }
+        return true;
+    }
+}
+
+leetcode 41 missing number
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        if(nums.length==0)return 1;
+        for(int i=0;i<nums.length;){
+            if(nums[i]>nums.length || nums[i]<=0){
+                i++;
+            }else if(nums[nums[i]-1]-1==nums[i]){
+              i++;
+            }else{
+                int temp=nums[nums[i]-1];
+                nums[nums[i]-1]=nums[i];
+                nums[i]=temp;
+            }
+        }
+        int i=0;
+        for(i=0;i<nums.length;i++){
+            if(nums[i]!=i+1)return i+1;
+        }
+        return nums[i-1]+1;
+    }
+}
+leetcode 275 index 2nd 
+class Solution {
+    public int hIndex(int[] citations) {
+        int n=citations.length;
+    for(int i=0;i<n;i++){
+        if(n-i<= citations[i]){
+            return n-i;
+        }
+    }
+    return 0;
+    }
+}
+ 
+class Solution{
+public int arrangecoins(int n){
+int count = 0;
+        while (n> 0){
+            count++;
+            n = n-count;
+        }
+        return n < 0 ? count-1 : count;
+ or 
+class Solution {
+    public int arrangeCoins(int n) {
+         return (int) (Math.sqrt(2*(long)n+ 0.25)-0.5);
+    }
+}
